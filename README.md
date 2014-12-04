@@ -1,3 +1,24 @@
-persist_deleted for Mongoid
+Persist Deleted Records for Mongoid
 ===============
-Persist sensitive data.
+Persist sensitive data with options to recover data.
+    
+To persist record, call destroy method on object. It will not delete record from database but persist that so you can recover it in the future if required. 
+    
+    object.destroy
+    
+It also has two scopes
+
+1. only_deleted: Fetch only deleted records of that particular model
+    e.g
+      Model.only_deleted
+2. with_deleted: Fetch all records of that particular model including deleted records
+    e.g
+      Model.with_deleted
+
+To recover records, call recover method on object
+    e.g.
+      Model.only_deleted.first.recover
+
+TO permanently delete record from system/database, call delete method
+    e.g.
+      object.delete
