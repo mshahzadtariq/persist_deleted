@@ -23,6 +23,6 @@ To recover records, call recover method on object
 
     Model.only_deleted.first.recover
 
-TO permanently delete record from system/database, call delete method
+To permanently delete record from system/database, call delete method
 
     object.delete
