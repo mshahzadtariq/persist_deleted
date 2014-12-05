@@ -9,9 +9,6 @@ And include this module to the model for which you want to enable soft delete an
     class MyModel
         include Mongoid::Document
         include Mongoid::PersistDeleted
-        
-        ....
-        ....
     end
     
 and that is all. 
