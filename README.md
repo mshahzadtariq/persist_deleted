@@ -6,8 +6,14 @@ Add following line to your Gemfile
     gem 'persist_deleted', git: 'https://github.com/mshahzadtariq/persist_deleted'
 
 And include this module to the model for which you want to enable soft delete and recovery feature
+
     class MyModel
-    
+      include Mongoid::Document
+      include Mongoid::PersistDeleted
+      
+      ......
+      
+    end
     
 and that is all. 
 
