@@ -1,5 +1,24 @@
 Persist Deleted Records for Mongoid
 ===============
+Installation
+=======
+Add following line to your Gemfile
+    gem 'persist_deleted', git: 'https://github.com/mshahzadtariq/persist_deleted'
+
+And include this module to the model for which you want to enable soft delete and recovery feature
+    class MyModel
+        include Mongoid::Document
+        include Mongoid::PersistDeleted
+        
+        ....
+        ....
+    end
+    
+and that is all. 
+
+Usage
+=======
+
 Persist sensitive data with options to recover data.
     
 To persist record, call destroy method on object. It will not delete record from database but persist that so you can recover it in the future if required. 
