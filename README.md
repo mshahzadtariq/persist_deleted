@@ -1,5 +1,6 @@
 Persist Deleted Records for Mongoid
 ===============
+Soft delete functionality for Mongoid ORM so you may recover records at later stage.
 Installation
 =======
 Add following line to your Gemfile
