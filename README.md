@@ -4,6 +4,7 @@ Soft delete functionality for Mongoid ORM so you may recover records at later st
 Installation
 =======
 Add following line to your Gemfile
+
     gem 'persist_deleted', git: 'https://github.com/mshahzadtariq/persist_deleted'
 
 And include this module to the model for which you want to enable soft delete and recovery feature
