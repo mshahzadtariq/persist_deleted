@@ -4,19 +4,19 @@ module Mongoid
 
     included do
 
-      field :deleted, type: Boolean, default: false
+      field :is_deleted, type: Boolean, default: false
 
-      default_scope -> { where(:deleted.in => [nil, false]) }
+      default_scope -> { where(:is_deleted.in => [nil, false]) }
 
-      scope :with_deleted, -> { self.unscoped.where(:deleted.in => [nil, false, true]) }
-      scope :only_deleted, -> { self.unscoped.where(deleted: true) }
+      scope :with_deleted, -> { self.unscoped.where(:is_deleted.in => [nil, false, true]) }
+      scope :only_deleted, -> { self.unscoped.where(is_deleted: true) }
 
       def destroy
-        self.set(:deleted => true)
+        self.set(:is_deleted => true)
       end
 
       def recover
-        self.set(:deleted => false)
+        self.set(:is_deleted => false)
       end
 
     end
